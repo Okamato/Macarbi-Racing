@@ -1,1 +1,1 @@
-Copyright 
+Copyright 2012–2016 Elasti
