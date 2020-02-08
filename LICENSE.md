@@ -1,3 +1,3 @@
 Copyright 2012–2016 Elasticsearch BV
 
-Licensed u
+Licensed under the A
