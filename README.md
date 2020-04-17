@@ -16,3 +16,5 @@ This node module that can be used for easily encrypting and decrypting serializa
 Currently, all versions of this library are able to decrypt secrets encrypted with previous versions. However, version 1.0.0 introduced the ability to use an optional AAD when encrypting/decrypting secrets.
 
 ## Maintainers Notes
+
+If you change encryption parameters so that the encrypted result is different from what the current latest release of this library would produce, make sure to bump up the major version of the library before releasing it and ensure that you disclose this breaking change.
