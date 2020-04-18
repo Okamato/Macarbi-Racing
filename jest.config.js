@@ -1,1 +1,1 @@
-modul
+module.exports 
