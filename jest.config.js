@@ -1,2 +1,3 @@
 module.exports = {
-  preset: 't
+  preset: 'ts-jest',
+ 
