@@ -1,4 +1,5 @@
 module.exports = {
   preset: 'ts-jest',
   rootDir: '.',
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  collectCover
