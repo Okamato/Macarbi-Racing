@@ -3,3 +3,4 @@ module.exports = {
   rootDir: '.',
   testEnvironment: 'node',
   collectCoverageFrom: [
+    'src/**
