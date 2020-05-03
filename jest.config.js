@@ -5,4 +5,5 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts'
   ],
-  coveragePathIgnorePattern
+  coveragePathIgnorePatterns: [
+    '<
