@@ -9,4 +9,7 @@ module.exports = {
     '<rootDir>/node_modules'
   ],
   "moduleFileExtensions": [
-    "js"
+    "js",
+    "ts"
+  ],
+  
