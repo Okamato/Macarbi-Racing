@@ -12,4 +12,5 @@ module.exports = {
     "js",
     "ts"
   ],
-  coverageReport
+  coverageReporters: [
+    '
