@@ -8,4 +8,5 @@ module.exports = {
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules'
   ],
-  "moduleFileExtensions"
+  "moduleFileExtensions": [
+    "js"
