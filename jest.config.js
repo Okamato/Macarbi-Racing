@@ -17,4 +17,5 @@ module.exports = {
     'lcov',
     'text'
   ],
-  coverageThres
+  coverageThreshold: {
+    gl
