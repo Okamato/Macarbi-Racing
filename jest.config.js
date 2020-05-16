@@ -18,4 +18,5 @@ module.exports = {
     'text'
   ],
   coverageThreshold: {
-    gl
+    global: {
+ 
