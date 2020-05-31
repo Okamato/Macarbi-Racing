@@ -23,4 +23,6 @@ module.exports = {
       functions: 100,
       lines: 93,
       statements: 93,
-   
+    }
+  }
+}
