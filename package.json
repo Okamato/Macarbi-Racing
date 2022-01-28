@@ -1,4 +1,5 @@
 {
   "name": "@elastic/node-crypto",
   "version": "1.2.1",
-  "description": "Easy (yet strong) encryption and decryption facilities for Nod
+  "description": "Easy (yet strong) encryption and decryption facilities for Node.js",
+  "m
