@@ -3,4 +3,5 @@
   "version": "1.2.1",
   "description": "Easy (yet strong) encryption and decryption facilities for Node.js",
   "main": "lib/crypto.js",
-  "types": "lib/crypto.
+  "types": "lib/crypto.d.ts",
+ 
