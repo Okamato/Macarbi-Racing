@@ -6,4 +6,4 @@
   "types": "lib/crypto.d.ts",
   "scripts": {
     "clean": "rm -rf lib coverage",
-   
+    "build": "npm run cl
