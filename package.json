@@ -5,4 +5,4 @@
   "main": "lib/crypto.js",
   "types": "lib/crypto.d.ts",
   "scripts": {
-    "clean"
+    "clean": "rm -rf lib co
