@@ -7,4 +7,4 @@
   "scripts": {
     "clean": "rm -rf lib coverage",
     "build": "npm run clean && tsc",
-    "coverag
+    "coverage": "je
