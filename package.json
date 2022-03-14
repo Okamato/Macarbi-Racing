@@ -8,4 +8,4 @@
     "clean": "rm -rf lib coverage",
     "build": "npm run clean && tsc",
     "coverage": "jest --coverage",
-    "test": "retire -n -p package.json && npm run lint && n
+    "test": "retire -n -p package.json && npm run lint && npm run build 
