@@ -9,4 +9,4 @@
     "build": "npm run clean && tsc",
     "coverage": "jest --coverage",
     "test": "retire -n -p package.json && npm run lint && npm run build && npm run unit",
-    "lint": "
+    "lint": "tslint -p t
