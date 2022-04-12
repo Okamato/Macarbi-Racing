@@ -10,4 +10,6 @@
     "coverage": "jest --coverage",
     "test": "retire -n -p package.json && npm run lint && npm run build && npm run unit",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "unit": "je
+    "unit": "jest"
+  },
+  "
