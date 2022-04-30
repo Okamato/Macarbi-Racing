@@ -13,4 +13,5 @@
     "unit": "jest"
   },
   "repository": {
-    "type
+    "type": "git",
+  
