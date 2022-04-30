@@ -12,4 +12,5 @@
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "unit": "jest"
   },
-  "repository
+  "repository": {
+    "type
