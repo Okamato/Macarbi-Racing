@@ -17,4 +17,5 @@
     "url": "git+https://github.com/elastic/node-crypto.git"
   },
   "author": "Shaunak Kashyap (https://github.com/ycombinator)",
-  "licens
+  "license": "Apache-2.0",
+ 
