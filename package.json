@@ -23,4 +23,4 @@
   },
   "homepage": "https://github.com/elastic/node-crypto#readme",
   "devDependencies": {
-    "@types/jest": "2
+    "@types/jest": "24.0.12",
