@@ -27,4 +27,5 @@
     "@types/node": "12.0.0",
     "jest": "24.8.0",
     "prettier": "1.17.0",
-    "retire": "
+    "retire": "1.2.10",
+    "ts-j
