@@ -18,3 +18,14 @@ describe('crypto', () => {
   });
 
   describe('encrypt()', () => {
+    it('fails if given an object that is not serializable', async () => {
+      const testObj = () => 'I am a function';
+      await expect(crypto.encrypt(testObj)).rejects.toThrow(
+        /Object to be encrypted must be serializable/
+      );
+    });
+  });
+
+  describe('encrypt() and decrypt()', () => {
+    it('can handle strings', async () => {
+      const testObj = 'I am a string';
