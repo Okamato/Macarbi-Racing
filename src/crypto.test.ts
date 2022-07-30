@@ -58,3 +58,13 @@ describe('crypto', () => {
       const testObj = [173, 'foo', false, { bar: 'baz' }];
 
       const encrypted = await crypto.encrypt(testObj);
+      const decrypted = await crypto.decrypt(encrypted);
+
+      expect(decrypted).toEqual(testObj);
+    });
+
+    it('can handle objects', async () => {
+      const testObj = {
+        aNumber: 17,
+        aString: 'baz',
+        anArray: [19, 23],
