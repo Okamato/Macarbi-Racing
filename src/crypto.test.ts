@@ -81,3 +81,17 @@ describe('crypto', () => {
   describe('synchronous encrypt() and decrypt()', () => {
     it('can handle strings', () => {
       const testObj = 'I am a string';
+
+      const encrypted = crypto.encryptSync(testObj);
+      const decrypted = crypto.decryptSync(encrypted);
+
+      expect(decrypted).toEqual(testObj);
+    });
+
+    it('can handle numbers', () => {
+      const testObj = 234391265392819463321;
+
+      const encrypted = crypto.encryptSync(testObj);
+      const decrypted = crypto.decryptSync(encrypted);
+
+      expect(decrypted).toEqual(testObj);
