@@ -29,3 +29,20 @@ describe('crypto', () => {
   describe('encrypt() and decrypt()', () => {
     it('can handle strings', async () => {
       const testObj = 'I am a string';
+
+      const encrypted = await crypto.encrypt(testObj);
+      const decrypted = await crypto.decrypt(encrypted);
+
+      expect(decrypted).toEqual(testObj);
+    });
+
+    it('can handle numbers', async () => {
+      const testObj = 234391265392819463321;
+
+      const encrypted = await crypto.encrypt(testObj);
+      const decrypted = await crypto.decrypt(encrypted);
+
+      expect(decrypted).toEqual(testObj);
+    });
+
+    it('can handle booleans', async () => {
