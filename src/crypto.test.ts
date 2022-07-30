@@ -46,3 +46,15 @@ describe('crypto', () => {
     });
 
     it('can handle booleans', async () => {
+      const testObj = false;
+
+      const encrypted = await crypto.encrypt(testObj);
+      const decrypted = await crypto.decrypt(encrypted);
+
+      expect(decrypted).toEqual(testObj);
+    });
+
+    it('can handle arrays', async () => {
+      const testObj = [173, 'foo', false, { bar: 'baz' }];
+
+      const encrypted = await crypto.encrypt(testObj);
