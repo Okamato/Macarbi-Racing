@@ -68,3 +68,16 @@ describe('crypto', () => {
         aNumber: 17,
         aString: 'baz',
         anArray: [19, 23],
+        aBoolean: true,
+      };
+
+      const encrypted = await crypto.encrypt(testObj);
+      const decrypted = await crypto.decrypt(encrypted);
+
+      expect(decrypted).toEqual(testObj);
+    });
+  });
+
+  describe('synchronous encrypt() and decrypt()', () => {
+    it('can handle strings', () => {
+      const testObj = 'I am a string';
