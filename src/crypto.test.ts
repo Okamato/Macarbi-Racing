@@ -95,3 +95,16 @@ describe('crypto', () => {
       const decrypted = crypto.decryptSync(encrypted);
 
       expect(decrypted).toEqual(testObj);
+    });
+
+    it('can handle booleans', () => {
+      const testObj = false;
+
+      const encrypted = crypto.encryptSync(testObj);
+      const decrypted = crypto.decryptSync(encrypted);
+
+      expect(decrypted).toEqual(testObj);
+    });
+
+    it('can handle arrays', () => {
+      const testObj = [173, 'foo', false, { bar: 'baz' }];
