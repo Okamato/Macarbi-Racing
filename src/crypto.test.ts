@@ -108,3 +108,13 @@ describe('crypto', () => {
 
     it('can handle arrays', () => {
       const testObj = [173, 'foo', false, { bar: 'baz' }];
+
+      const encrypted = crypto.encryptSync(testObj);
+      const decrypted = crypto.decryptSync(encrypted);
+
+      expect(decrypted).toEqual(testObj);
+    });
+
+    it('can handle objects', () => {
+      const testObj = {
+        aNumber: 17,
