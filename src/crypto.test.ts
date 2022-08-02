@@ -118,3 +118,21 @@ describe('crypto', () => {
     it('can handle objects', () => {
       const testObj = {
         aNumber: 17,
+        aString: 'baz',
+        anArray: [19, 23],
+        aBoolean: true,
+      };
+
+      const encrypted = crypto.encryptSync(testObj);
+      const decrypted = crypto.decryptSync(encrypted);
+
+      expect(decrypted).toEqual(testObj);
+    });
+  });
+
+  describe('decrypt()', () => {
+    it('fails when its input contains a modified salt', async () => {
+      const testObj = 'I am a string';
+
+      const encrypted = await crypto.encrypt(testObj);
+      const encryptedBytes = new Buffer(encrypted);
