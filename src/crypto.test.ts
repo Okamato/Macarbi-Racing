@@ -136,3 +136,11 @@ describe('crypto', () => {
 
       const encrypted = await crypto.encrypt(testObj);
       const encryptedBytes = new Buffer(encrypted);
+      const encryptedBytesWithModifiedSalt = encryptedBytes.fill('s', 0, 64); // salt is 64 bytes long starting at byte 0
+
+      await expect(crypto.decrypt(encryptedBytesWithModifiedSalt)).rejects.toThrow(
+        /Unsupported state or unable to authenticate data/
+      );
+    });
+
+    it('fails when its input contains a modified IV', async () => {
