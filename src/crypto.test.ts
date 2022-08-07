@@ -161,3 +161,17 @@ describe('crypto', () => {
       const encrypted = await crypto.encrypt(testObj);
       const encryptedBytes = new Buffer(encrypted);
       const encryptedBytesWithModifiedAuthTag = encryptedBytes.fill('i', 76, 92); // auth tag is 16 bytes long, starting a byte 76
+
+      await expect(crypto.decrypt(encryptedBytesWithModifiedAuthTag)).rejects.toThrow(
+        /Unsupported state or unable to authenticate data/
+      );
+    });
+
+    it('fails when its input contains a modified encrypted value', async () => {
+      const testObj = 'I am a string';
+
+      const encrypted = await crypto.encrypt(testObj);
+      const encryptedBytes = new Buffer(encrypted);
+      const encryptedBytesWithModifiedEncryptedValue = encryptedBytes.fill('i', 92); // encrypted value starts at byte 92
+
+      await expect(crypto.decrypt(encryptedBytesWithModifiedEncryptedValue)).rejects.toThrow(
