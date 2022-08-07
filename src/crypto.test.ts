@@ -144,3 +144,20 @@ describe('crypto', () => {
     });
 
     it('fails when its input contains a modified IV', async () => {
+      const testObj = 'I am a string';
+
+      const encrypted = await crypto.encrypt(testObj);
+      const encryptedBytes = new Buffer(encrypted);
+      const encryptedBytesWithModifiedIV = encryptedBytes.fill('i', 64, 76); // iv is 12 bytes long, starting a byte 64
+
+      await expect(crypto.decrypt(encryptedBytesWithModifiedIV)).rejects.toThrow(
+        /Unsupported state or unable to authenticate data/
+      );
+    });
+
+    it('fails when its input contains a modified auth tag', async () => {
+      const testObj = 'I am a string';
+
+      const encrypted = await crypto.encrypt(testObj);
+      const encryptedBytes = new Buffer(encrypted);
+      const encryptedBytesWithModifiedAuthTag = encryptedBytes.fill('i', 76, 92); // auth tag is 16 bytes long, starting a byte 76
