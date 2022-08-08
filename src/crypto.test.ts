@@ -175,3 +175,7 @@ describe('crypto', () => {
       const encryptedBytesWithModifiedEncryptedValue = encryptedBytes.fill('i', 92); // encrypted value starts at byte 92
 
       await expect(crypto.decrypt(encryptedBytesWithModifiedEncryptedValue)).rejects.toThrow(
+        /Unsupported state or unable to authenticate data/
+      );
+    });
+  });
