@@ -179,3 +179,19 @@ describe('crypto', () => {
       );
     });
   });
+
+
+  describe('backwards compatibility break test', () => {
+    it('correctly decrypts a encrypted string literal', async () => {
+      const encrypted =
+        'GxM6gGXoR9z+/B4wBjI1dp0B8pcE1+nfyEqIKanp45Ec0QV1eGp6821Xc2IGAnGeYGq9RbdHxYe+yBG4uykPNH8NNdSiNoWKzjSyuYuvGYTgxeYwI3nMLo8y5WVxEWsO/Gn5VYDFG3xQYXg=';
+      expect(await crypto.decrypt(encrypted)).toBe('I am a string');
+    });
+  });
+
+  describe('Using AAD', () => {
+    describe('type validation', () => {
+      describe('for encrypt', () => {
+        it('should throw an error if aad is empty string', async () => {
+          await expect(crypto.encrypt('Hello World!', '')).rejects.toThrowError(
+            /AAD cannot be an empty string/
