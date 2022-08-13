@@ -195,3 +195,18 @@ describe('crypto', () => {
         it('should throw an error if aad is empty string', async () => {
           await expect(crypto.encrypt('Hello World!', '')).rejects.toThrowError(
             /AAD cannot be an empty string/
+          );
+        });
+
+        it('should be valid for string', async () => {
+          const encrypted = await crypto.encrypt('Hello World!', 'should succeed');
+          expect(encrypted).not.toBeUndefined();
+          expect(encrypted).not.toEqual('Hello World!');
+        });
+
+        it('should throw an error if AAD is an Array', async () => {
+          const aad = ['a', 'b'] as any;
+          await expect(crypto.encrypt('Hello World!', aad)).rejects.toThrowError(
+            /AAD must be a string/
+          );
+        });
