@@ -210,3 +210,16 @@ describe('crypto', () => {
             /AAD must be a string/
           );
         });
+
+        it('should throw an error if AAD is an Object', async () => {
+          const aad = {} as any;
+          await expect(crypto.encrypt('Hello World!', aad)).rejects.toThrowError(
+            /AAD must be a string/
+          );
+        });
+
+        it('should throw an error if AAD is an function', async () => {
+          /* tslint:disable:no-empty */
+          const aad = (() => {}) as any;
+          await expect(crypto.encrypt('Hello World!', aad)).rejects.toThrowError(
+            /AAD must be a string/
