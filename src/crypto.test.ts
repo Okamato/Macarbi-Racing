@@ -223,3 +223,19 @@ describe('crypto', () => {
           const aad = (() => {}) as any;
           await expect(crypto.encrypt('Hello World!', aad)).rejects.toThrowError(
             /AAD must be a string/
+          );
+        });
+      });
+
+      describe('for decrypt', () => {
+        const encrypted =
+          'ImI9iJzw8dc3g47sM0fdJTa1+N+h9EI12kzFt1dzewuKx4E3rO6d6lqH+VSYNAf1H3m9HX/SFb0ZeJBx06NtERF2j9rY+1PtrOkJQfQCqnVC1PdlguZAMTG38vEfKBMgrJiK2+fqBFH80A==';
+
+        it('should throw an error if aad is empty string', async () => {
+          await expect(crypto.decrypt(encrypted, '')).rejects.toThrowError(
+            /AAD cannot be an empty string/
+          );
+        });
+
+        it('should be valid for string', async () => {
+          const decrypted = await crypto.decrypt(encrypted, 'should succeed');
