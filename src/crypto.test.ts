@@ -239,3 +239,11 @@ describe('crypto', () => {
 
         it('should be valid for string', async () => {
           const decrypted = await crypto.decrypt(encrypted, 'should succeed');
+          expect(decrypted).not.toBeUndefined();
+          expect(decrypted).toEqual('Hello World!');
+        });
+
+        it('should throw an error if AAD is an Array', async () => {
+          const aad = ['a', 'b'] as any;
+          await expect(crypto.decrypt(encrypted, aad)).rejects.toThrowError(/AAD must be a string/);
+        });
