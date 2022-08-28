@@ -260,3 +260,10 @@ describe('crypto', () => {
         });
       });
     });
+
+    it('should be decryptable with same AAD', async () => {
+      const encrypted = await crypto.encrypt('Hello World!', 'some aad');
+
+      const decrypted = await crypto.decrypt(encrypted, 'some aad');
+      expect(decrypted).toEqual('Hello World!');
+    });
