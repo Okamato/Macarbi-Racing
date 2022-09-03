@@ -17,3 +17,10 @@ import * as crypto from 'crypto';
 const IV_LENGTH_IN_BYTES = 12;
 const SALT_LENGTH_IN_BYTES = 64;
 const KEY_LENGTH_IN_BYTES = 32;
+const KEY_ITERATIONS = 10000;
+const KEY_DIGEST = 'sha512';
+const CIPHER_ALGORITHM = 'aes-256-gcm';
+const ENCRYPTION_RESULT_ENCODING = 'base64';
+
+export interface CryptoOptions {
+  encryptionKey: string | Buffer;
