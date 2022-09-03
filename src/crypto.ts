@@ -8,3 +8,12 @@
  * a property named `encryptionKey` which is a passphrase used by the encryption and decryption algorithms within
  * this module. The `makeCryptoWith` function returns an object containing two functions, `encrypt` and `decrypt`.
  *
+ * Both the `encrypt` and `decrypt` functions are inverses of each other and return Promises. That is:
+ *   someSerializableObj === await decrypt(await encrypt(someSerializableObj)).
+ */
+
+import * as crypto from 'crypto';
+
+const IV_LENGTH_IN_BYTES = 12;
+const SALT_LENGTH_IN_BYTES = 64;
+const KEY_LENGTH_IN_BYTES = 32;
