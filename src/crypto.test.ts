@@ -278,3 +278,8 @@ describe('crypto', () => {
     it('should not be decryptable with the wrong aad', async () => {
       const encrypted = await crypto.encrypt('Hello World!', '123456789');
       await expect(crypto.decrypt(encrypted, '123456780')).rejects.toThrowError(
+        /Unsupported state or unable to authenticate data/
+      );
+    });
+  });
+});
