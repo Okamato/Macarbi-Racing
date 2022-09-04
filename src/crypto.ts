@@ -24,3 +24,11 @@ const ENCRYPTION_RESULT_ENCODING = 'base64';
 
 export interface CryptoOptions {
   encryptionKey: string | Buffer;
+}
+
+export type EncryptOutput = string | object | number | boolean;
+
+export interface Crypto {
+  encrypt<Input = any>(input: Input, aad?: string): Promise<string>;
+  decrypt(encryptedOutput: string | Buffer, aad?: string): Promise<EncryptOutput | EncryptOutput[]>;
+  encryptSync<Input = any>(input: Input, aad?: string): string;
