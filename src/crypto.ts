@@ -60,3 +60,12 @@ function _generateSalt() {
 }
 
 function _generateIV() {
+  return crypto.randomBytes(IV_LENGTH_IN_BYTES);
+}
+
+function _generateKeySync(encryptionKey: crypto.BinaryLike, salt: string | Buffer): Buffer {
+  if (!Buffer.isBuffer(salt)) {
+    salt = Buffer.from(salt, ENCRYPTION_RESULT_ENCODING);
+  }
+
+  const key = crypto.pbkdf2Sync(
