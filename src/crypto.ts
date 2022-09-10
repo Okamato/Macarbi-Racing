@@ -69,3 +69,12 @@ function _generateKeySync(encryptionKey: crypto.BinaryLike, salt: string | Buffe
   }
 
   const key = crypto.pbkdf2Sync(
+    encryptionKey,
+    salt,
+    KEY_ITERATIONS,
+    KEY_LENGTH_IN_BYTES,
+    KEY_DIGEST
+  );
+  if (!Buffer.isBuffer(key)) {
+    return Buffer.from(key, 'binary');
+  }
