@@ -47,3 +47,16 @@ function _validateAAD(aad?: string) {
   }
 
   if (typeof aad !== 'string') {
+    throw new Error('AAD must be a string');
+  }
+
+  if (aad.length === 0) {
+    throw new Error('AAD cannot be an empty string');
+  }
+}
+
+function _generateSalt() {
+  return crypto.randomBytes(SALT_LENGTH_IN_BYTES);
+}
+
+function _generateIV() {
