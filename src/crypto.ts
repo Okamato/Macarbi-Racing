@@ -32,3 +32,18 @@ export interface Crypto {
   encrypt<Input = any>(input: Input, aad?: string): Promise<string>;
   decrypt(encryptedOutput: string | Buffer, aad?: string): Promise<EncryptOutput | EncryptOutput[]>;
   encryptSync<Input = any>(input: Input, aad?: string): string;
+  decryptSync(encryptedOutput: string | Buffer, aad?: string): EncryptOutput | EncryptOutput[];
+}
+
+function _validateOpts({ encryptionKey }: CryptoOptions) {
+  if (!encryptionKey) {
+    throw new Error('encryptionKey is required');
+  }
+}
+
+function _validateAAD(aad?: string) {
+  if (aad == null) {
+    return;
+  }
+
+  if (typeof aad !== 'string') {
