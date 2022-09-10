@@ -78,3 +78,14 @@ function _generateKeySync(encryptionKey: crypto.BinaryLike, salt: string | Buffe
   if (!Buffer.isBuffer(key)) {
     return Buffer.from(key, 'binary');
   }
+  return key;
+}
+
+function _generateKey(encryptionKey: crypto.BinaryLike, salt: string | Buffer): Promise<Buffer> {
+  if (!Buffer.isBuffer(salt)) {
+    salt = Buffer.from(salt, ENCRYPTION_RESULT_ENCODING);
+  }
+
+  return new Promise((resolve, reject) => {
+    crypto.pbkdf2(
+      encryptionKey,
