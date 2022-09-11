@@ -95,3 +95,10 @@ function _generateKey(encryptionKey: crypto.BinaryLike, salt: string | Buffer): 
       KEY_DIGEST,
       (err, key) => {
         if (err) {
+          reject(err);
+          return;
+        }
+
+        if (!Buffer.isBuffer(key)) {
+          key = Buffer.from(key, 'binary');
+        }
