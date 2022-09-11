@@ -89,3 +89,9 @@ function _generateKey(encryptionKey: crypto.BinaryLike, salt: string | Buffer): 
   return new Promise((resolve, reject) => {
     crypto.pbkdf2(
       encryptionKey,
+      salt,
+      KEY_ITERATIONS,
+      KEY_LENGTH_IN_BYTES,
+      KEY_DIGEST,
+      (err, key) => {
+        if (err) {
