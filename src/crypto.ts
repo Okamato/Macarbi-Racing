@@ -102,3 +102,17 @@ function _generateKey(encryptionKey: crypto.BinaryLike, salt: string | Buffer): 
         if (!Buffer.isBuffer(key)) {
           key = Buffer.from(key, 'binary');
         }
+
+        resolve(key);
+      }
+    );
+  });
+}
+
+function _serialize(serializable: any): string {
+  const serializedObj = JSON.stringify(serializable);
+  if (serializedObj === undefined) {
+    throw Error('Object to be encrypted must be serializable');
+  }
+  return serializedObj;
+}
