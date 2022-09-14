@@ -116,3 +116,22 @@ function _serialize(serializable: any): string {
   }
   return serializedObj;
 }
+
+function encrypt<Input = any>(
+  serializedInput: string,
+  iv: Buffer,
+  key: Buffer,
+  salt: Buffer,
+  aad?: string
+): string {
+  const cipher = crypto.createCipheriv(CIPHER_ALGORITHM, key, iv);
+
+  if (aad != null) {
+    cipher.setAAD(Buffer.from(aad, 'utf8'));
+  }
+
+  const encrypted = Buffer.concat([cipher.update(serializedInput, 'utf8'), cipher.final()]);
+  const tag = cipher.getAuthTag();
+
+  return Buffer.concat([salt, iv, tag, encrypted]).toString(ENCRYPTION_RESULT_ENCODING);
+}
