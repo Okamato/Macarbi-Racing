@@ -166,3 +166,16 @@ function asBuffer(encryptedOutput: string | Buffer) {
 }
 
 /**
+ * Implmenetation of encrypt() and decrypt() taken from https://gist.github.com/AndiDittrich/4629e7db04819244e843,
+ * which was recommended by @jaymode
+ */
+export default function makeCryptoWith(opts: CryptoOptions): Crypto {
+  _validateOpts(opts);
+  const { encryptionKey } = opts;
+  return {
+    async encrypt(input, aad) {
+      _validateAAD(aad);
+      const salt = _generateSalt();
+      const serializedInput = _serialize(input);
+      const iv = _generateIV();
+      const key = await _generateKey(encryptionKey, salt);
