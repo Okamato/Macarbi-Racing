@@ -135,3 +135,17 @@ function encrypt<Input = any>(
 
   return Buffer.concat([salt, iv, tag, encrypted]).toString(ENCRYPTION_RESULT_ENCODING);
 }
+
+function decrypt(
+  key: Buffer,
+  outputBytes: Buffer | Buffer,
+  aad?: string
+): EncryptOutput | EncryptOutput[] {
+  const iv = outputBytes.slice(SALT_LENGTH_IN_BYTES, SALT_LENGTH_IN_BYTES + IV_LENGTH_IN_BYTES);
+  const tag = outputBytes.slice(
+    SALT_LENGTH_IN_BYTES + IV_LENGTH_IN_BYTES,
+    SALT_LENGTH_IN_BYTES + IV_LENGTH_IN_BYTES + 16
+  ); // Auth tag is always 16 bytes long
+  const text = outputBytes.slice(SALT_LENGTH_IN_BYTES + IV_LENGTH_IN_BYTES + 16);
+
+  const decipher = crypto.createDecipheriv(CIPHER_ALGORITHM, key, iv);
