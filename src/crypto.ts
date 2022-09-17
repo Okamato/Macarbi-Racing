@@ -149,3 +149,20 @@ function decrypt(
   const text = outputBytes.slice(SALT_LENGTH_IN_BYTES + IV_LENGTH_IN_BYTES + 16);
 
   const decipher = crypto.createDecipheriv(CIPHER_ALGORITHM, key, iv);
+  decipher.setAuthTag(tag);
+
+  if (aad != null) {
+    decipher.setAAD(Buffer.from(aad, 'utf8'));
+  }
+
+  const decrypted = decipher.update(text, undefined, 'utf8') + decipher.final('utf8');
+  return JSON.parse(decrypted);
+}
+
+function asBuffer(encryptedOutput: string | Buffer) {
+  return Buffer.isBuffer(encryptedOutput)
+    ? encryptedOutput
+    : Buffer.from(encryptedOutput, ENCRYPTION_RESULT_ENCODING);
+}
+
+/**
