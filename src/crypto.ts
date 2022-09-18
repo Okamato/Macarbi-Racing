@@ -201,3 +201,7 @@ export default function makeCryptoWith(opts: CryptoOptions): Crypto {
       const outputBytes = asBuffer(encryptedOutput);
       const salt = outputBytes.slice(0, SALT_LENGTH_IN_BYTES);
       const key = _generateKeySync(encryptionKey, salt);
+      return decrypt(key, outputBytes, aad);
+    },
+  };
+}
