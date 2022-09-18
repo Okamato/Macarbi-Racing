@@ -179,3 +179,15 @@ export default function makeCryptoWith(opts: CryptoOptions): Crypto {
       const serializedInput = _serialize(input);
       const iv = _generateIV();
       const key = await _generateKey(encryptionKey, salt);
+      return encrypt(serializedInput, iv, key, salt, aad);
+    },
+    async decrypt(encryptedOutput, aad) {
+      _validateAAD(aad);
+      const outputBytes = asBuffer(encryptedOutput);
+      const salt = outputBytes.slice(0, SALT_LENGTH_IN_BYTES);
+      const key = await _generateKey(encryptionKey, salt);
+      return decrypt(key, outputBytes, aad);
+    },
+    encryptSync(input, aad) {
+      _validateAAD(aad);
+      const serializedInput = _serialize(input);
