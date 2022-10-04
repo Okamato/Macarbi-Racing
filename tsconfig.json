@@ -2,4 +2,4 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "declaration": true,
-    "source
+    "sourceMap": true,
