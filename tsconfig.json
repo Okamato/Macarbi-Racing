@@ -3,4 +3,5 @@
     "strictNullChecks": true,
     "declaration": true,
     "sourceMap": true,
-    "noImplicitAny": tr
+    "noImplicitAny": true,
+    "noEmitOnEr
