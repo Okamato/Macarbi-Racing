@@ -5,4 +5,5 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "noEmitOnError": true,
-    "noUnusedLocal
+    "noUnusedLocals": true,
+  
