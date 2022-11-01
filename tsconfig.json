@@ -6,4 +6,4 @@
     "noImplicitAny": true,
     "noEmitOnError": true,
     "noUnusedLocals": true,
-  
+    "allowJs": fal
