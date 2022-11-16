@@ -6,4 +6,5 @@
     "noImplicitAny": true,
     "noEmitOnError": true,
     "noUnusedLocals": true,
-    "allowJs": fal
+    "allowJs": false,
+    "mo
