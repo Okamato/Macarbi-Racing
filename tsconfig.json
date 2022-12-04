@@ -7,4 +7,5 @@
     "noEmitOnError": true,
     "noUnusedLocals": true,
     "allowJs": false,
-    "module": "common
+    "module": "commonjs",
+    "mo
