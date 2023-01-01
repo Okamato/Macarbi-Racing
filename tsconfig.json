@@ -9,4 +9,5 @@
     "allowJs": false,
     "module": "commonjs",
     "moduleResolution": "node",
-    "target"
+    "target": "ES5",
+    "ou
