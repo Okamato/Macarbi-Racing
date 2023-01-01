@@ -9,3 +9,4 @@
     "allowJs": false,
     "module": "commonjs",
     "moduleResolution": "node",
+    "target"
