@@ -10,4 +10,4 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "ES5",
-    "ou
+    "outDir": "./lib"
