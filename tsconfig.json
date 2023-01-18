@@ -11,4 +11,4 @@
     "moduleResolution": "node",
     "target": "ES5",
     "outDir": "./lib",
-    "bas
+    "baseUrl": ".",
