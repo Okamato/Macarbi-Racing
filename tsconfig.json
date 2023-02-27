@@ -12,4 +12,4 @@
     "target": "ES5",
     "outDir": "./lib",
     "baseUrl": ".",
-    "root
+    "rootDir": "./src",
