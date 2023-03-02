@@ -13,3 +13,4 @@
     "outDir": "./lib",
     "baseUrl": ".",
     "rootDir": "./src",
+    "lib":
