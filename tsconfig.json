@@ -15,4 +15,6 @@
     "rootDir": "./src",
     "lib": [
       "es6",
-      "es2017.obj
+      "es2017.object"
+    ]
+ 
