@@ -18,4 +18,5 @@
       "es2017.object"
     ]
   },
-  "include
+  "include": [
+    "src/**
