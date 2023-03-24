@@ -1,4 +1,4 @@
 {
   "defaultSeverity": "error",
   "extends": [
-    "tslin
+    "tslint:recommended"
