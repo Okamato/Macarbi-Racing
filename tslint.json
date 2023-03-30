@@ -8,4 +8,4 @@
   "jsRules": {},
   "rules": {
     "prettier": [true, {
-      "singl
+      "singleQuote": t
