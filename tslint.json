@@ -9,4 +9,4 @@
   "rules": {
     "prettier": [true, {
       "singleQuote": true,
-      "traili
+      "trailingComma": "es5",
