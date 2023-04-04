@@ -10,4 +10,5 @@
     "prettier": [true, {
       "singleQuote": true,
       "trailingComma": "es5",
-      "print
+      "printWidth": 100
+    }
