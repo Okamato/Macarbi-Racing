@@ -12,4 +12,5 @@
       "trailingComma": "es5",
       "printWidth": 100
     }],
-    "object-literal-sort-keys": fa
+    "object-literal-sort-keys": false,
+   
