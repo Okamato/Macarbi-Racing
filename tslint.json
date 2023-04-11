@@ -15,4 +15,4 @@
     "object-literal-sort-keys": false,
     "interface-name": false,
     "no-default-export": false,
-    "semicolo
+    "semicolon": [true, "
