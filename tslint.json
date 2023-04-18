@@ -15,4 +15,5 @@
     "object-literal-sort-keys": false,
     "interface-name": false,
     "no-default-export": false,
-    "semicolon": [true, "always", "ignore-interfaces
+    "semicolon": [true, "always", "ignore-interfaces"]
+  },
