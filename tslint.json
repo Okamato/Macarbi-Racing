@@ -17,3 +17,4 @@
     "no-default-export": false,
     "semicolon": [true, "always", "ignore-interfaces"]
   },
+  "rule
