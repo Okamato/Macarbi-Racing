@@ -17,4 +17,5 @@
     "no-default-export": false,
     "semicolon": [true, "always", "ignore-interfaces"]
   },
-  "rulesDirectory": 
+  "rulesDirectory": [
+    "tslin
