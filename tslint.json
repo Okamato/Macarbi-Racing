@@ -18,4 +18,6 @@
     "semicolon": [true, "always", "ignore-interfaces"]
   },
   "rulesDirectory": [
-    "tslint-plugin-pre
+    "tslint-plugin-prettier"
+  ]
+}
