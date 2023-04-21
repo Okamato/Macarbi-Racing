@@ -18,4 +18,4 @@
     "semicolon": [true, "always", "ignore-interfaces"]
   },
   "rulesDirectory": [
-    "tslin
+    "tslint-plugin-pre
